@@ -11,6 +11,7 @@ Fonctionnalités principales :
 - lois, décrets, décisions de justice
 - entrées de dictionnaire et encyclopédie
 - pages web
+- références archivistiques
 - Mise en forme conforme aux normes du mémoire MSNH
 - Compatibilité complète avec Zotero
   

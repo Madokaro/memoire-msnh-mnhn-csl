@@ -6,14 +6,14 @@
     <title-short>MSNH MNHN</title-short>
 
     <author>
-      <name>Madokaro</name>
+      <name>Caroline CONRAD-BOISNIER</name>
     </author>
 
     <id>http://www.zotero.org/styles/memoire-msnh-mnhn</id>
     <link href="http://www.zotero.org/styles/memoire-msnh-mnhn" rel="self"/>
     <category citation-format="author-date"/>
     <category field="generic"/>
-    <updated>2026-02-27T02:46:00+00:00</updated>
+    <updated>2026-03-16T12:21:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</rights>
   </info>
   <locale xml:lang="fr">
@@ -441,6 +441,23 @@
       <text variable="page"/>
     </group>
   </macro>
+<macro name="archive-info">
+  <choose>
+    <if variable="archive archive_location" match="any">
+      <group delimiter=", ">
+        <text variable="archive"/>
+        <text variable="archive_location"/>
+      </group>
+    </if>
+  </choose>
+</macro>
+<macro name="genre-info">
+  <choose>
+    <if variable="genre">
+      <text variable="genre"/>
+    </if>
+  </choose>
+</macro>
 <macro name="publisher-book">
   <group delimiter=", ">
     <text variable="publisher-place"/>
@@ -573,8 +590,10 @@
 <macro name="broadcast-details">
   <group delimiter=", ">
     <text variable="title" quotes="true"/>
+    <text macro="genre-info"/>
     <text variable="container-title" font-style="italic"/>
     <text variable="publisher-place"/>
+    <text macro="archive-info"/>
     <text macro="year-only"/>
     <text macro="duration"/>
   </group>
@@ -590,6 +609,7 @@
 <macro name="web-details">
   <group delimiter=", ">
     <text variable="title" quotes="true"/>
+    <text macro="genre-info"/>
     <text variable="container-title" font-style="italic"/>
     <choose>
       <if variable="issued">
@@ -631,8 +651,10 @@
 <macro name="film-details">
   <group delimiter=", ">
     <text variable="title" font-style="italic"/>
+    <text macro="genre-info"/>
     <text variable="publisher"/>
     <text variable="publisher-place"/>
+    <text macro="archive-info"/>
     <text macro="year-only"/>
     <text macro="duration"/>
   </group>
@@ -649,6 +671,7 @@
 
     <!-- Titre de l'entrée -->
     <text variable="title" quotes="true"/>
+    <text macro="genre-info"/>
 
     <!-- in Prénom NOM (dir.) si éditeur -->
     <choose>
@@ -673,6 +696,7 @@
     <text variable="collection-title"/>
 
     <!-- Année -->
+    <text macro="archive-info"/>
     <text macro="year-only"/>
 
     <!-- Pages -->
@@ -758,9 +782,11 @@
     <group delimiter=", ">
       <text macro="author"/>
       <text variable="title" quotes="true"/>
+      <text macro="genre-info"/>
       <text variable="container-title" font-style="italic"/>
       <text variable="volume"/>
       <text variable="issue"/>
+      <text macro="archive-info"/>
       <text macro="year-only"/>
       <text variable="page"/>
     </group>
@@ -782,6 +808,7 @@
     <group delimiter=", ">
       <text macro="author"/>
       <text variable="title" quotes="true"/>
+      <text macro="genre-info"/>
       <group delimiter=" ">
         <text term="in" font-style="italic"/>
         <text macro="editor-in"/>
@@ -790,6 +817,7 @@
       <text variable="publisher-place"/>
       <text variable="publisher"/>
       <text variable="collection-title"/>
+      <text macro="archive-info"/>
       <text macro="year-only"/>
       <text variable="page"/>
     </group>
@@ -812,9 +840,11 @@
       <group delimiter=", ">
         <text macro="editor-as-author"/>
         <text variable="title" font-style="italic"/>
+        <text macro="genre-info"/>
         <text variable="publisher-place"/>
         <text variable="publisher"/>
         <text variable="collection-title"/>
+        <text macro="archive-info"/>
         <text macro="year-only"/>
       </group>
 
@@ -837,9 +867,11 @@
       <group delimiter=", ">
         <text macro="author"/>
         <text variable="title" font-style="italic"/>
+        <text macro="genre-info"/>
         <text variable="publisher-place"/>
         <text variable="publisher"/>
         <text variable="collection-title"/>
+        <text macro="archive-info"/>
         <text macro="year-only"/>
       </group>
 
@@ -864,6 +896,7 @@
           <text macro="author-web"/>
         </if>
       </choose>
+      <text macro="archive-info"/>
       <text macro="web-details"/>
     </group>
 
@@ -963,10 +996,12 @@
           <if type="legislation bill legal_case" match="any">
           </if>
           <else>
+            <text macro="archive-info"/>
             <text macro="year-only"/>
           </else>
         </choose>
         <text macro="title-plus-extra"/>
+        <text macro="genre-info"/>
         <text macro="container"/>
       </group>
 
